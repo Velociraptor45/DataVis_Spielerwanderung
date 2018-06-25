@@ -1,0 +1,75 @@
+body {
+    background-color: #fdfff8;
+    font-family: 'Lato', sans-serif;
+    hyphens: auto;
+  }
+  
+  header {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    grid-gap: 10px;
+  }
+  #logo {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+  }
+  header div {
+    text-align: right;
+    padding-right: 20px;
+  }
+  header div h1 {
+    font-size: 4em;
+    margin: 0;
+  }
+  nav {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+  }
+  nav a div {
+    text-align: center;
+    padding: 10px;
+  }
+  nav a:hover {
+    background-color: #2b5c03;
+    color: white;
+    opacity: .8;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  main {
+    background: url('../img/bg.png') no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px;
+    margin-top: 10px;
+  }
+  
+  .chart {
+    margin: 20px auto;
+    background-color: white;
+    opacity: .8;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  main h2 {
+    padding: 5px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    background-color: white;
+    opacity: .8;
+    height: 30px;
+  }
+  
+  footer {
+    background-color: #2b5c03;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    padding: 15px;
+  }
