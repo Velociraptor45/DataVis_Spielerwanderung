@@ -1,0 +1,381 @@
+﻿
+
+
+Figueirense FC
+
+Tottenham
+
+Thannhausen
+
+Benfica
+
+PSV Eindhoven
+Twente Enschede
+Liverpool U18
+
+
+KRC Genk 
+Heerenveen
+
+B. Jerusalem
+AJ Auxerre
+Banik Ostrau
+Stand. Lüttich
+Borussia Mönchengladbach
+Flamengo
+Sparta Prag
+Pandurii T.-Jiu
+
+FC Chelsea
+
+
+FC Arsenal
+
+FC Fulham
+
+
+Türkiyemspor
+
+Birmingham City
+
+US Palermo
+
+Guaratinguetá
+Vissel Kobe
+MSK Zilina
+Wuppertaler SV
+
+St. Gallen U21
+CF Belenenses
+Sturm Graz
+Sloboda Tuzla
+AS Nancy B
+
+RW Essen
+
+ES Sahel
+Acad. Coimbra
+Levski Sofia
+
+GO Audax
+Betis Sevilla
+
+Internacional
+RB Salzburg
+Asante Kotoko
+Corinthians
+FC Valencia
+
+SV Mattersburg
+PAOK Saloniki
+Bursaspor
+
+Otelul Galati
+R. Straßburg
+Austria Kärnten
+Vojvodina
+
+Trabzonspor
+Bröndby IF
+FC Lahti
+
+
+Fluminense
+Iraty SC
+Slavia Prag
+Rapid Wien
+
+AEK Athen
+
+Vit. Guimarães
+Karlsruhe II
+CD América
+Trelleborgs FF
+Al-Ahli (UAE)
+Frosinone Calc.
+KAA Gent
+Halmstads BK
+Newcastle Utd.
+Ol. Marseille
+Grêmio
+Real Madrid
+Zenit S-Pb
+
+AC Florenz
+Grasshoppers
+
+FC Groningen
+Lazio Rom
+Nacional
+Táchira
+
+Colo Colo
+Energie Cottbus
+Rot Weiss Ahlen
+Stade Rennes
+Racing Club
+Desp. Brasil
+Al-Ettifaq
+Bohemians 1905
+Yverdon-Sport
+Renova
+
+Suwon Bluewings
+Tromsø
+TJ Teda
+
+FC Basel
+FC Liverpool
+Neftchi Baku
+Portuguesa B
+Rosenborg BK
+
+Real Madrid B
+Atlético Madrid
+Houston
+RCD Mallorca
+Roda JC
+FC Metz
+NK Zagreb
+BSC Young Boys
+TuS Koblenz
+FC Barnsley
+FC Brügge
+Terek Grozny
+Zamalek
+Lech Posen
+Melbourne Vict.
+Cerezo Osaka
+AC Mailand
+CFR Cluj
+Real Murcia
+Olymp. Piräus
+Kashima Antlers
+Steel Azin
+LOSC Lille
+Tombense
+Spartak Moskau
+Arsenal Res.
+NK Osijek
+Akademisk BK
+HNK Rijeka
+Urawa Reds
+Juventus Turin
+Valenciennes FC
+Shimizu S-Pulse
+Valerenga
+Man Utd U23
+Middlesbrough
+Glasgow Rangers
+Dinamo Zagreb
+Stoke City
+RSC Anderlecht
+Jeju Utd.
+Zulia FC
+FC Santos
+IF Elfsborg
+
+FC São Paulo
+Man City Res.
+Maccabi Netanya
+Austria Wien
+
+Panionios
+FC Reading
+HJK Helsinki
+Dinamo Minsk
+Albirex Niigata
+FC Getafe
+Heracles Almelo
+Portsmouth U21
+Rapid Bukarest
+Iraklis
+Fulham U23
+Hajduk Split
+Sanf. Hiroshima
+FC Midtjylland
+Zaglebie Lubin
+Manchester City
+FC Genua
+Slo. Bratislava
+Chelsea Res.
+Kashiwa Reysol
+FC Kopenhagen
+Adelaide United
+Manchester Utd.
+Pol. Warschau
+SV  Ried
+Stabaek IF
+FK Jablonec
+FC Thun
+FC Zürich
+FC Sion
+Viktoria Pilsen
+Helsingborgs IF
+CD Nacional
+Cracovia Krakau
+Shkendija
+West Ham Utd.
+Lilleström SK
+Panathinaikos
+OFK Belgrad
+NEC Nijmegen
+
+Kaizer Chiefs
+SV Kapfenberg
+FC Twente II
+AC Siena
+Assyriska FF
+FC Flamurtari
+Hapoel Tel Aviv
+Legia Warschau
+Polonia Bytom
+Asteras Tripoli
+Al-Nasr Riad
+Athletic Bilbao
+U. de Chile
+Górnik Zabrze
+Real Sociedad
+West Brom
+Jönköping
+Mirassol (SP)
+Nagoya Grampus
+Kayserispor
+Vasco da Gama
+Hradec Králové
+Slovan Liberec
+
+AZ Alkmaar
+Nordsjaelland
+Haugesund
+KSC Lokeren
+Volyn Lutsk
+TSV Buchbach
+Dreams FC
+Grêmio B
+Rad Belgrad
+SK Tavriya
+Alianza Lima
+Independiente
+Celtic Glasgow
+FC Barcelona
+Shakhtar D.
+AS St.-Étienne
+Partizan
+Inter
+FC Sevilla
+Grödig
+Sporting
+FC Koper
+W. Burghausen
+Dynamo Kiew
+AS Nancy
+Widzew Lodz
+Zulte Waregem
+Barcelona SC
+Botev Plovdiv
+Loko Moskau
+G. Bordeaux
+Wigan Athletic
+AFC Sunderland
+Malmö FF
+Viking FK
+Man City U21
+Lausanne-Sport
+Norwich City
+AS Rom
+FC Turin
+Shakhtar 3
+BJ Guoan
+PEC Zwolle
+Notting. Forest
+Rydaholm
+ZSKA Moskau
+Gaziantepspor
+Galatasaray
+Olympique Lyon
+Ittihad
+Rangers Talca
+Rayo Vallecano
+Al-Jazira
+Cardiff City
+Calgary United
+SSC Neapel
+Parma
+SV Lippstadt 08
+SC Paderborn 07
+Goiás EC
+FBC Melgar
+Tottenham U21
+FC Porto
+Ludogorets
+Sport Recife
+Dinamo Moskau
+KyungHee Univ.
+D. Guadalajara
+CC Yatai
+Videoton FC
+FC Tokyo
+BATE Borisov
+Strömsgodset
+Anzhi
+Kuban Krasnodar
+FC Vysocina
+Cagliari Calcio
+FC Vaduz
+Al-Ahli
+FC Luzern
+Molde FK
+
+FC Lorient
+AIK Solna
+CA Osasuna
+Cerro Porteño
+Paris SG B
+Paris SG
+FC Granada
+RC Lens
+EA Guingamp
+Ajax Amsterdam
+Ult. Strikers
+Al Arabi
+Atlético-MG
+AS Monaco
+ADO Den Haag
+Gamba Osaka
+UC Sampdoria
+Vitesse Arnheim
+Lierse SK
+Dnipro
+Panetolikos
+Leicester City
+GC Zürich U18
+Maccabi Haifa
+Altinordu
+FC Sochaux
+Man City U18
+Barça Juvenil A
+Sporting Gijón
+OGC Nizza
+Braga U19
+UC Berkeley
+SV Sandhausen
+AS Nancy U19
+FC Nantes
+Dep. La Coruna
+IFK Norrköping
+FC Utrecht
+Sagan Tosu
+Zrinjski Mostar
+UD Las Palmas
+River Plate
+Caracas FC
+Sparta R.
+Liaoning FC
+KV Oostende
+FC Málaga
+Arsenal U23
+Estudiantes
+Estoril Praia
+Anderlecht Res.
+Rubin Kazan
