@@ -4,6 +4,9 @@ var d3 = d3 || {};
     "use strict";
 
     let svgID = "#sankey";
+    let nodesID = "#nodes";
+    let transferValueID = "#transferValue";
+    let selectedTeamID = "#selected";
     let svgWidth = 400;
     let svgHeight = 800;
 
@@ -13,13 +16,19 @@ var d3 = d3 || {};
 
     let graph = {"nodes": [], "links": []};
 
+    let selectedTeam = "FC Bayern München";
+
     function start(){
         d3.json("JSON/player_movement.json").then(function(data){
-            buildGraph(data, "FC Bayern München");
+            buildGraph(data, selectedTeam);
             buildSankey();
+            addTextElementForTransferValue();
         });
     }
 
+    /*
+        checks if the passed name is in the passed array
+    */
     function isInArray(name, array){
         for(let i = 0; i < array.length; i++){
             if(array[i] === name){
@@ -62,10 +71,20 @@ var d3 = d3 || {};
         }
     }
 
+    /*
+        pushes a new object into the link array in the graph object
+        from is the source team
+        to is the target team
+    */
     function pushNewLinkObject(from, to){
         graph.links.push({"source": from, "target": to, "value": 1});
     }
 
+    /*
+        returns the tag that should represent a team in the diagram
+        German teams have their name as their tag
+        but e.g. Chelsea, Barcelona, etc. are grouped under the tag "Ausland"
+    */
     function getTag(name){
         if(isInArray(name, firstDiv) || isInArray(name, otherGerDiv) || name === "Karriereende" || name === "pausiert" || name === "Vereinslos"){
             return name;
@@ -107,48 +126,79 @@ var d3 = d3 || {};
 
     function addToDOM(svg, sankey){
         
+        let nameEnding;
         console.log(graph);
         let path = sankey.link();
         let gElements = svg.append("g")
             .attr("transform", "translate(200, 0)").append("g").selectAll("g")
             .data(graph.links)
             .enter().append("path")
-            .attr("class", "link")
+            .attr("class", function(d){
+                nameEnding = d.source.name.substring(d.source.name.length - 2, d.source.name.length);
+                if(nameEnding === "Fr")
+                {
+                    return "linkFr";
+                } else {
+                    return "linkTo";
+                }
+            })
             .attr("d", path)
+            .attr("index", function(d, i){
+                return i;
+            })
+            .attr("value", function(d){
+                return d.value;
+            })
             .style("stroke-width", function(d){return Math.max(1, d.dy)})
             .sort(function(a,b){return b.dy - a.dy});
-        
-        gElements.append("title")
-            .text(function(d){
-                return d.source.name
-                + " → " + 
-                d.target.name + "\n" + d3.format(d.value);
-            });
 
-        let node = svg.selectAll("g").append("g").selectAll("g")
+        let node = svg.selectAll("g").append("g").attr("id", "nodes").selectAll("g")
             .data(graph.nodes)
             .enter().append("g")
             .attr("class", "node")
             .attr("transform", function(d){
                 return "translate(" + d.x + "," + (d.y) + ")";
+            })
+            .attr("index", function(d, i){
+                return i;
             });
         
         node.append("rect")
             .attr("height", function(d) {return d.dy})
             .attr("width", sankey.nodeWidth())
-            .style("fill", "black")
-            .append("title")
-            .text(function(d){
-                return d.name;
-            });
-
+            .style("fill", "black");
+        
         node.append("text")
-            .attr("x", -6)
+            .attr("x", function(d){
+                nameEnding = d.name.substring(d.name.length - 2, d.name.length);
+                if(nameEnding === "To"){
+                    return sankey.nodeWidth() + 6;
+                } else {
+                    return -6;
+                }
+            })
             .attr("y", function(d) { return d.dy / 2; })
             .attr("dy", ".35em")
-            .attr("text-anchor", "end")
-            .attr("transform", null)
-            .text(function(d) { return d.name; })
+            .attr("text-anchor", function(d){
+                nameEnding = d.name.substring(d.name.length - 2, d.name.length);
+                if(nameEnding === "To"){
+                    return "start";
+                } else {
+                    return "end";
+                }
+            })
+            .attr("graphName", function(d){
+                return d.name;
+            })
+            .text(function(d){
+                nameEnding = d.name.substring(d.name.length - 2, d.name.length);
+                if(nameEnding === "To" || nameEnding === "Fr"){
+                    return d.name.slice(0, d.name.length - 2); 
+                } else {
+                    return d.name;
+                }
+                
+            })
     }
 
     function isNameInGraphNodes(name){
@@ -160,6 +210,10 @@ var d3 = d3 || {};
         return false;
     }
 
+    /*
+        returns the index of the object in the links array
+        that matches the passed variables from (source) and to (target)
+    */
     function getLinkIndexInGraphLinks(from, to){
         for(let i = 0; i < graph.links.length; i++){
             if(graph.links[i].source === from && graph.links[i].target === to){
@@ -167,6 +221,56 @@ var d3 = d3 || {};
             }
         }
         return -1;
+    }
+
+    /*
+        returns the index of the passed name in the graphs.nodes array
+        if the name is not in the array, the function returns -1
+    */
+    function getIndexInNodesArray(name){
+        for(let i = 0; i < graph.nodes.length; i++){
+            if(graph.nodes[i].name === name){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    /*
+        adds an extra text element to the selected team element (the one in the middle)
+        that shows the transfer value;
+        sets also a id for the selected team element for better identification
+    */
+    function addTextElementForTransferValue(){
+        let index = getIndexInNodesArray(selectedTeam, graph.nodes);
+        if(index >= 0)
+        {
+            let nodes = d3.select(nodesID);
+            let g = nodes._groups[0][0].childNodes[index];
+            g = d3.select(g).attr("id", selectedTeamID.substring(1, selectedTeamID.length));
+
+            g.append("text")
+                .attr("y", 60)
+                .attr("id", transferValueID.substring(1, transferValueID.length));
+        } else {
+            console.log("Indexfehler");
+        }
+    }
+
+    /*
+        sets the passed number as transfer value
+    */
+    function showTransferValue(value){
+        let textElement = d3.select(transferValueID);
+        textElement.text(value);
+    }
+
+    /*
+        removes the transfer value number
+    */
+    function hideTransferValue(){
+        let textElement = d3.select(transferValueID);
+        textElement.text("");
     }
 
     start();

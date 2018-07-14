@@ -86,7 +86,7 @@ body {
     width: 1000px;
   }
 
-  .link{
+  .linkFr, .linkTo{
     fill: none;
     stroke: black;
     stroke-opacity: .2;
@@ -95,4 +95,14 @@ body {
   #sankey g{
     margin: auto 0;
     text-align: center;
+  }
+
+  .linkFr:hover{
+    stroke: blue;
+    stroke-opacity: .6;
+  }
+
+  .linkTo:hover{
+    stroke: green;
+    stroke-opacity: .6;
   }
