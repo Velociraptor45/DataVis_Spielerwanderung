@@ -7,6 +7,10 @@ var d3 = d3 || {};
     let nodesID = "#nodes";
     let transferValueID = "#transferValue";
     let selectedTeamID = "#selected";
+    let linkToClassName = "linkTo";
+    let linkFromClassName = "linkFr";
+    let emphasizeTo = "linkToEmphasize";
+    let emphasizeFrom = "linkFrEmphasize";
     let svgWidth = 400;
     let svgHeight = 800;
 
@@ -17,6 +21,8 @@ var d3 = d3 || {};
     let graph = {"nodes": [], "links": []};
 
     let selectedTeam = "FC Bayern München";
+
+    let $currentlyClickedLink = undefined;
 
     function start(){
         d3.json("JSON/player_movement.json").then(function(data){
@@ -135,11 +141,10 @@ var d3 = d3 || {};
             .enter().append("path")
             .attr("class", function(d){
                 nameEnding = d.source.name.substring(d.source.name.length - 2, d.source.name.length);
-                if(nameEnding === "Fr")
-                {
-                    return "linkFr";
+                if(nameEnding === "Fr") {
+                    return linkFromClassName;
                 } else {
-                    return "linkTo";
+                    return linkToClassName;
                 }
             })
             .attr("d", path)
@@ -254,6 +259,89 @@ var d3 = d3 || {};
                 .attr("id", transferValueID.substring(1, transferValueID.length));
         } else {
             console.log("Indexfehler");
+        }
+
+        setHoverFunctions();
+        setOnClickFunction();
+    }
+
+    function setHoverFunctions(){
+
+        $("." + linkToClassName).hover(function(){
+            emphasizeLink(emphasizeTo, $(this));
+        }, function(){
+            let $this = $(this);
+            if($currentlyClickedLink === undefined || $currentlyClickedLink[0].attributes[1] !== $this[0].attributes[1]){
+                deemphasizeLink($this);
+            }
+        });
+
+        $("." + linkFromClassName).hover(function(){
+            emphasizeLink(emphasizeFrom, $(this));
+        }, function(){
+            let $this = $(this);
+            if($currentlyClickedLink === undefined || $currentlyClickedLink[0].attributes[1] !== $this[0].attributes[1]){
+                deemphasizeLink($this);
+            }
+        });
+
+        $(".node").hover(function(){
+            let $this = $(this);
+            let value = $this[0].__data__.value;
+            showTransferValue(value);
+        }, function(){
+            hideTransferValue();
+        });
+    }
+
+    function setOnClickFunction(){
+        $("." + linkFromClassName).click(function(){
+            let $this = $(this);
+            if($currentlyClickedLink === undefined){
+                $currentlyClickedLink = $this;
+                emphasizeLink(emphasizeFrom, $this);
+            } else if ($currentlyClickedLink[0].attributes[1] === $this[0].attributes[1]){
+                $currentlyClickedLink = undefined;
+            } else {
+                deemphasizeLink($currentlyClickedLink);
+                emphasizeLink(emphasizeFrom, $this);
+                $currentlyClickedLink = $this;
+            }
+        });
+
+        $("." + linkToClassName).click(function(){
+            let $this = $(this);
+            if($currentlyClickedLink === undefined){
+                $currentlyClickedLink = $this;
+                emphasizeLink(emphasizeTo, $this);
+            } else if ($currentlyClickedLink[0].attributes[1] === $this[0].attributes[1]){
+                $currentlyClickedLink = undefined;
+            } else {
+                deemphasizeLink($currentlyClickedLink);
+                emphasizeLink(emphasizeTo, $this);
+                $currentlyClickedLink = $this;
+            }
+        });
+    }
+
+    function emphasizeLink(className, $this){
+        let value = $this[0].__data__.value;
+        showTransferValue(value);
+        $this.addClass(className);
+    }
+
+    function deemphasizeLink($this){
+        if($currentlyClickedLink === undefined){
+            hideTransferValue();
+        } else {
+            let value = $currentlyClickedLink[0].__data__.value;
+            showTransferValue(value);
+        }
+
+        if($this.hasClass(emphasizeTo)){
+            $this.removeClass(emphasizeTo);
+        } else if($this.hasClass(emphasizeFrom)){
+            $this.removeClass(emphasizeFrom);
         }
     }
 

@@ -97,12 +97,12 @@ body {
     text-align: center;
   }
 
-  .linkFr:hover{
+  .linkFrEmphasize{
     stroke: blue;
     stroke-opacity: .6;
   }
 
-  .linkTo:hover{
+  .linkToEmphasize{
     stroke: green;
     stroke-opacity: .6;
   }
