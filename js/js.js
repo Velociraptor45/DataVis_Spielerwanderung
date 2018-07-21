@@ -1,5 +1,3 @@
-var d3 = d3 || {};
-
 (function(){
     "use strict";
 
@@ -26,6 +24,8 @@ var d3 = d3 || {};
 
     function start(){
         d3.json("JSON/player_movement.json").then(function(data){
+            let teamSelection = getTeamSelectionObject();
+            teamSelection.makeTeamSelection(firstDiv);
             buildGraph(data, selectedTeam);
             buildSankey();
             addTextElementForTransferValue();
@@ -119,6 +119,10 @@ var d3 = d3 || {};
         addToDOM(svg, sankey);
     }
 
+    /**
+     * replaces text in the graph array with indexes
+     * otherwise the sankey object couldn't process the graph
+     */
     function replaceTextWithIndex(){
         graph.links.forEach(function (d, i) {
             graph.links[i].source = graph.nodes.indexOf(graph.links[i].source);
@@ -130,6 +134,12 @@ var d3 = d3 || {};
           });
     }
 
+    /**
+     * inserts the nodes and the links between the nodes into the DOM
+     * 
+     * @param {the svg in the DOM} svg
+     * @param {the sankey object} sankey
+     */
     function addToDOM(svg, sankey){
         
         let nameEnding;
@@ -206,6 +216,11 @@ var d3 = d3 || {};
             })
     }
 
+    /**
+     * checks if the passed name is in the nodes array in the graph object
+     * 
+     * @param {name you're looking for} name 
+     */
     function isNameInGraphNodes(name){
         for(let i = 0; i < graph.nodes.length; i++){
             if(graph.nodes[i] === name){
