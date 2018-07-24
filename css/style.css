@@ -79,8 +79,8 @@ body {
   }
 
   #sankey{
-    height: 1000px;
-    width: 1000px;
+    width: 900px;
+    display: block;
     margin: auto;
   }
 
@@ -106,7 +106,7 @@ body {
   }
 
   /**
-    copied from Daniela's code
+    main source: Daniela's code
   */
   .option:hover,
   .selected {
@@ -116,8 +116,9 @@ body {
 
   #selection {
     border: 2px solid rgb(82, 84, 163);
-    margin-left: 20px;
     background-color: rgba(255, 255, 255, 0.8);
+    min-width: 200px;
+    height: 922px;
   }
 
   .option {
