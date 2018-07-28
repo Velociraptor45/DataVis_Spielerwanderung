@@ -99,12 +99,12 @@ body {
     text-align: center;
   }
 
-  .linkFrEmphasize{
+  .linkToEmphasize{
     stroke: blue;
     stroke-opacity: .6;
   }
 
-  .linkToEmphasize{
+  .linkFrEmphasize{
     stroke: green;
     stroke-opacity: .6;
   }
