@@ -28,6 +28,9 @@ var d3 = d3 || {};
 
     let $currentlyClickedLink = undefined;
 
+    /**
+     * initially called
+     */
     function start(){
         makeTeamSelection(firstDiv);
         loadJSON();
@@ -91,6 +94,9 @@ var d3 = d3 || {};
         }
     }
 
+    /**
+     * loads the graph for the currently 'selectedTeam' from 'allGraphs' into 'graph'
+     */
     function loadGraphForSeletedTeam(){
         let index = getIndexInArray(selectedTeam, firstDiv);
         if(index >= 0){
@@ -258,6 +264,13 @@ var d3 = d3 || {};
         return false;
     }
 
+    /**
+     * returns index of the name in the array
+     * if name's not in the array, -1 is returned
+     * 
+     * @param {name that your're looking for in the array} name 
+     * @param {array in which you want to search} array 
+     */
     function getIndexInArray(name, array){
         for(let i = 0; i < array.length; i++){
             if(array[i] === name){
@@ -305,8 +318,6 @@ var d3 = d3 || {};
             let nodes = d3.select(nodesID);
             let g = nodes._groups[0][0].childNodes[index];
             g = d3.select(g).attr("id", selectedTeamID.substring(1, selectedTeamID.length));
-
-            //repositionSelectedTeamLabel(g);
 
             g.append("text")
                 .attr("y", 20 + g._groups[0][0].__data__.dy)

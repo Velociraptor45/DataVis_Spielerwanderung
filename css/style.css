@@ -74,6 +74,10 @@ body {
 
   /* specific */
 
+  h2{
+    text-align: center;
+  }
+
   rect{
     color: white;
   }
@@ -118,7 +122,7 @@ body {
     border: 2px solid rgb(82, 84, 163);
     background-color: rgba(255, 255, 255, 0.8);
     min-width: 200px;
-    height: 922px;
+    height: 918px;
   }
 
   .option {
