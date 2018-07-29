@@ -1,3 +1,7 @@
+/**
+ * source for building the sankey: http://bl.ocks.org/d3noob/c9b90689c1438f57d649
+ */
+
 var d3 = d3 || {};
 
 (function(){
